@@ -17,7 +17,7 @@ const EmployeeDetails = () => {
         .catch((err) => console.log(err))
 
 
-    }, []);
+    });
 
 
     const data = useSelector((state) => state.data)

@@ -3,14 +3,19 @@ import { useDispatch, useSelector } from "react-redux"
 import { storeData } from "../redux/actions/actions";
 
 const Company = () => {
+    
+
     const dispatch = useDispatch();
     useEffect(() => {
+
+        
+
         fetch("https://employee-s.herokuapp.com/employee")
             .then((res) => res.json())
 
             .then((res) => dispatch(storeData(res)))
             .catch((err) => console.log(err))
-    }, [])
+    })
 
     const data = useSelector((state) => state.data)
 

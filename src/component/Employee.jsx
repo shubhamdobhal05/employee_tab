@@ -14,14 +14,17 @@ import {
 import { Button } from '@chakra-ui/react'
 
 const Employee = () => {
+    
+    
     const dispatch = useDispatch();
     useEffect(() => {
+        
         fetch("https://employee-s.herokuapp.com/employee")
             .then((res) => res.json())
 
             .then((res) => dispatch(storeData(res)))
             .catch((err) => console.log(err))
-    }, [])
+    })
 
     const data = useSelector((state) => state.data)
 
